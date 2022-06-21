@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주문</title>
+</head>
+
+<body>
+
+<!--  전체 코드 빨간줄 떠도 페이지 잘 작동되면 신경 안써도 됨, 이클립스는 코드 잘 되어있어도 html 에러 잘남  -->
+
+	<h2>주문</h2>
+	
+	<form method="get" action="/servlet/test07">	<!-- action은 이동할 페이지 -->
+	
+		<p> <label>주소</label> <br> 
+		<input type = "text" name = "address"> </p>
+		
+		<p> <label>결제카드</label> <br> 
+		<input type = "text" name = "card"> </p>
+		
+		<p> <label>가격</label> <br> 
+		<input type = "text" name = "price"> </p>
+		
+		<button type="submit">주문</button>
+	
+	</form>
+	
+	
+	<!--  http://localhost:8080/servlet/test07.html  -->
+
+</body>
+</html>
