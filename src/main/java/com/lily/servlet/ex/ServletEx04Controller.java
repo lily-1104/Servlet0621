@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/servlet/ex04")	// 여기에서 ex04는 ex04.html이랑 전혀 관계 없음
-public class SevletEx04Controller extends HttpServlet {
+public class ServletEx04Controller extends HttpServlet {
 	
 	// src -> ex04.html 연동 해야함
 	
