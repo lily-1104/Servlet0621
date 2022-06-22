@@ -56,13 +56,13 @@ public class ServletTest10Controller extends HttpServlet {
 			out.println("<h1>아이디가 일치하지 않습니다 </h1>");
 			
 			// password가 일치하지 않을 때
-		} else if(password.equals(userMap.get("password"))) {
+		} else if(!password.equals(userMap.get("password"))) {
 			out.println("<h1>비밀번호가 일치하지 않습니다 </h1>");
 			
 		} else {
 			
 			// 로그인 성공
-			out.println("<h1>" + userMap.get("name") + "환영합니다 </h2>");
+			out.println("<h1>" + userMap.get("name") + "님 환영합니다 </h2>");
 		}
 		
 		
