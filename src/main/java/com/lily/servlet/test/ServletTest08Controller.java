@@ -27,6 +27,7 @@ public class ServletTest08Controller extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
+		
 		PrintWriter out = response.getWriter();
 		
 		String keyword = request.getParameter("keyword");

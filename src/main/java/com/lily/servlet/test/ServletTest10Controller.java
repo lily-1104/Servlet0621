@@ -53,16 +53,19 @@ public class ServletTest10Controller extends HttpServlet {
 		
 			// id가 일치하지 않을 때
 		if (!id.equals(userMap.get("id"))) {	// 일치하지 않으니까 id 앞에 ! 적음
+						// 위의 id는 맵 코드의 29번줄 key 값의 id임
 			out.println("<h1>아이디가 일치하지 않습니다 </h1>");
 			
 			// password가 일치하지 않을 때
 		} else if(!password.equals(userMap.get("password"))) {
+						// 위의 password는 맵 코드의 30번줄 key 값의 password임
 			out.println("<h1>비밀번호가 일치하지 않습니다 </h1>");
 			
 		} else {
 			
 			// 로그인 성공
 			out.println("<h1>" + userMap.get("name") + "님 환영합니다 </h2>");
+						// 위의 name은 맵 코드의 31번줄 key 값의 name임
 		}
 		
 		
