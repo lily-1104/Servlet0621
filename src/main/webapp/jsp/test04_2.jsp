@@ -14,25 +14,29 @@
 	
 </head>
 <body>
-	
+
 	<div class="container">
 	
-		<h2>체격 조건 입력</h2>
+		<h2>사칙 연산</h2>
 		
-		
-		<form method="get" action="/jsp/test03_1.jsp">
+		<form method="post" action="/jsp/test04_1.jsp">
 		
 			<div class="d-flex">
-		
-				<input type="text" class="form-control col-2" placeholder="키를 입력하세요" name="height"> cm
-	
-					<%--  form-control : 페이지 폭 만큼 입력창 폭 넓어져서 col-2로 간격 조정  --%>
-				
-				<input type="text" class="form-control col-2" placeholder="몸무게를 입력하세요" name="weight"> kg
-	
-				
-				<button class="btn btn-info" type="submit">계산</button>
 			
+				<input type="text" class="form-control col-2 ml-2" name="number1">
+				
+				<select name="operator" class="form-control col-1 ml-2">
+					<option value="plus">+</option>
+					<option value="minus">-</option>
+					<option value="multiple">X</option>
+					<option value="divide">/</option>
+				</select>
+				
+				<input type="text" class="form-control col-2 ml-2" name="number2">
+				
+				
+				<button class="btn btn-success ml-2" type="submit">계산</button>
+				
 			</div>
 			
 		</form>
@@ -41,8 +45,8 @@
 	
 	
 	
-		<%--  http://localhost:8080/jsp/test03_2.jsp  --%>
-	
-
+		<%--  http://localhost:8080/jsp/test04_2.jsp  --%>
+			
+			
 </body>
 </html>

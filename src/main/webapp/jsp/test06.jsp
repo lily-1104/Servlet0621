@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+	<%-- 임포트 --%>
+<%@ page import="java.util.*" %>
+
 <html>
 <head>
 <meta charset="UTF-8">
-<title>입력 화면</title>
+<title>자바 제어문 사용하기 1</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -14,34 +18,46 @@
 	
 </head>
 <body>
+
+	<%--  장보기 목록 	=> 아래에 주어진 리스트 객체를 통해서 아래 결과 화면과 같은 장보기 목록 테이블을 만드세요  --%>
 	
-	<div class="container">
+	<% 
+		List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
+	%>
 	
-		<h2>체격 조건 입력</h2>
-		
-		
-		<form method="get" action="/jsp/test03_1.jsp">
-		
-			<div class="d-flex">
-		
-				<input type="text" class="form-control col-2" placeholder="키를 입력하세요" name="height"> cm
+	<h2>장보기 목록</h2>
 	
-					<%--  form-control : 페이지 폭 만큼 입력창 폭 넓어져서 col-2로 간격 조정  --%>
-				
-				<input type="text" class="form-control col-2" placeholder="몸무게를 입력하세요" name="weight"> kg
-	
-				
-				<button class="btn btn-info" type="submit">계산</button>
+	<table>
+		<tr> 
+			<th class="col-5"> 번호 </th>
+			<th class="col-5"> 품목 </th>
+		</tr>
+		
+	<table>
+		<% for (String item : goodsList) { %>
 			
-			</div>
+			<tr>
+				<td></td>
+				<td>저지방 우유</td>
+			</tr>
 			
-		</form>
+			
+			
+			
+		<% } %>
+			
+		
+		
+		
 	
-	</div>
+	</table>
 	
+
 	
+		<%--  http://localhost:8080/jsp/test06.jsp  --%>
 	
-		<%--  http://localhost:8080/jsp/test03_2.jsp  --%>
 	
 
 </body>

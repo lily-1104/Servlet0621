@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>입력 화면</title>
+<title>길이 변환</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -14,35 +14,22 @@
 	
 </head>
 <body>
-	
+
 	<div class="container">
 	
-		<h2>체격 조건 입력</h2>
+		<h2>길이 변환</h2>
 		
+		<input type="text" class="form-control col-2"> cm
 		
-		<form method="get" action="/jsp/test03_1.jsp">
+		<label>인치 <input type="checkbox" name="unit"> </label>
+		<label>야드 <input type="checkbox" name="unit"> </label>
+		<label>피트 <input type="checkbox" name="unit"> </label>
+		<label>미터 <input type="checkbox" name="unit"> </label>
 		
-			<div class="d-flex">
-		
-				<input type="text" class="form-control col-2" placeholder="키를 입력하세요" name="height"> cm
+		<button class="btn btn-success" type="submit">변환</button>
 	
-					<%--  form-control : 페이지 폭 만큼 입력창 폭 넓어져서 col-2로 간격 조정  --%>
-				
-				<input type="text" class="form-control col-2" placeholder="몸무게를 입력하세요" name="weight"> kg
-	
-				
-				<button class="btn btn-info" type="submit">계산</button>
-			
-			</div>
-			
-		</form>
 	
 	</div>
-	
-	
-	
-		<%--  http://localhost:8080/jsp/test03_2.jsp  --%>
-	
 
 </body>
 </html>
