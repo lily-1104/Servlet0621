@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>길이 변환</title>
+<title>책 세부 페이지</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -15,33 +15,22 @@
 </head>
 <body>
 
-	<div class="container">
+	<form method="post" action="test08_1.jsp">
 	
-		<h2>길이 변환</h2>
+		<div class="d-flex">
 		
-		<form method="post" action="test05_1.jsp">
 		
-			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="length"> cm
-			</div>
-			
-			<label>인치 <input type="checkbox" name="units" value="inch"> </label>
-			<label>야드 <input type="checkbox" name="units" value="yard"> </label>
-			<label>피트 <input type="checkbox" name="units" value="feet"> </label>
-			<label>미터 <input type="checkbox" name="units" value="meter"> </label>
-			
-			<div>
-				<button class="btn btn-success" type="submit">변환</button>
-			</div>
-			
-		</form>
+		
+		
+		</div>
 	
-	</div>
-
-
-
-		<%--  http://localhost:8080/jsp/test05_2.jsp  --%>
+	</form>
 	
 	
+	
+		<%--  http://localhost:8080/jsp/test08_2.jsp  --%>
+		
+		
+
 </body>
 </html>

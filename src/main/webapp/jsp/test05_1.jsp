@@ -20,27 +20,57 @@
 					   Post Method를 통해서 submit 하세요
 					   전달 받은 길이를 선택된 단위 모두로 변환해서 출력하세요  --%>
 
-	
 	<%
-		
 		// cm 단위의 길이
 		// 변환할 단위 (체크박스 기반의 여러 개)
 		
 		int length = Integer.parseInt(request.getParameter("length"));
 		
+	
 		// 변환할 단위 여러 개
 		String[] units = request.getParameterValues("units");
+		
+			// inch, yard, feet, meter
 	
+		
 		// {inch, yard};	반복문으로 결과값 꺼내기, 반복문이라 여러개 값이 나와야 함...?
-	
-	
-	
+		
+		String result = "";
+		
+		for (int i = 0; i < units.length; i++) {
+			
+			String unit = units[i];
+			
+			if (unit.equals("inch")) {
+				double inch = length * 0.39;
+				
+					// 3.124 in
+					// result = result + inch + "in";
+				result += inch + " in <br>"; 	// 위 코드를 좀 더 간단하게 표현함
+				
+			} else if (unit.equals("yard")) {
+				double yard = length * 0.010936133;
+				result += yard + " yd <br>";
+				
+			} else if (unit.equals("feet")) {
+				double feet = length * 0.032808399;
+				result += feet + " ft <br>";
+				
+			} else {
+				double meter = length / 100.0;
+				result += meter + "m <br>";
+			}
+		}
 	%>
 	
 	
+	<h2> 변환 결과</h2>
 	
+	<h3><%= length %>cm </h3>
 	
+	<hr>
 	
+	<h3><%= result %></h3>
 	
 	
 	

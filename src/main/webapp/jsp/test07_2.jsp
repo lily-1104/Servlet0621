@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>길이 변환</title>
+<title>메뉴 검색</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -17,31 +17,28 @@
 
 	<div class="container">
 	
-		<h2>길이 변환</h2>
+		<h3>메뉴 검색</h3>
 		
-		<form method="post" action="test05_1.jsp">
+		<form method="post" action="test07_1.jsp">
 		
 			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="length"> cm
+				<input type="text" class="form-control col-3" name="menu">
+				
+				<label><input type="checkbox" name="filter" value="true" class="ml-2 mr-2"> 4점 이하 제외</label>
+			
 			</div>
 			
-			<label>인치 <input type="checkbox" name="units" value="inch"> </label>
-			<label>야드 <input type="checkbox" name="units" value="yard"> </label>
-			<label>피트 <input type="checkbox" name="units" value="feet"> </label>
-			<label>미터 <input type="checkbox" name="units" value="meter"> </label>
-			
-			<div>
-				<button class="btn btn-success" type="submit">변환</button>
-			</div>
-			
+			<button class="btn btn-success mt-2" type="submit">검색</button>
+		
 		</form>
+		
 	
 	</div>
-
-
-
-		<%--  http://localhost:8080/jsp/test05_2.jsp  --%>
 	
 	
+	
+		<%--  http://localhost:8080/jsp/test07_2.jsp  --%>
+			
+			
 </body>
 </html>

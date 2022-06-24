@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 
 	<%-- 임포트 --%>
 <%@ page import="java.util.*" %>
 
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -21,39 +21,42 @@
 
 	<%--  장보기 목록 	=> 아래에 주어진 리스트 객체를 통해서 아래 결과 화면과 같은 장보기 목록 테이블을 만드세요  --%>
 	
+	
 	<% 
 		List<String> goodsList = Arrays.asList(new String[]{ 
 		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
 		});
 	%>
 	
-	<h2>장보기 목록</h2>
+	<div class="container">
 	
-	<table>
-		<tr> 
-			<th class="col-5"> 번호 </th>
-			<th class="col-5"> 품목 </th>
-		</tr>
+		<h1 class="text-center">장보기 목록</h1>
 		
-	<table>
-		<% for (String item : goodsList) { %>
-			
-			<tr>
-				<td></td>
-				<td>저지방 우유</td>
-			</tr>
-			
-			
-			
-			
-		<% } %>
-			
+		<table class="table text-center">
 		
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>품목</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<% for (int i = 0; i < goodsList.size(); i++) { %>
+				
+					<tr>
+						<td><%= i + 1 %></td>
+						<td><%= goodsList.get(i) %></td>
+					</tr>
+					
+				<% } %>
+				
+			</tbody>
 		
-		
+		</table>
 	
-	</table>
-	
+	</div>
+		
 
 	
 		<%--  http://localhost:8080/jsp/test06.jsp  --%>
