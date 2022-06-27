@@ -89,17 +89,29 @@
 				
 			<tbody>
 				
-				<% for (Map<String, Object> book : list) %>
+					<%--  리스트에서 책 정보 하나씩 꺼내기  --%>
+				<% for (Map<String, Object> book : list) {%>
+				
+					<tr>
+						<td><%= book.get("id") %> </td>
+						
+						<td>
+							<img width="100" src="<%= book.get("image") %>">
+						</td>
+						
+						<td class="display-4">	  <%-- display-1이 제일 큼 --%>
+						
+								<%-- 원하는 화면으로 넘어가는 링크 걸기, 
+									 링크 주소 뒤의 id 값에 따라서 책이 변경되기 때문에 링크 주소에도 변수 사용 --%>
+							<a href="http://localhost:8080/jsp/test08_2.jsp?book_id=<%= book.get("id") %>">
+							<%= book.get("title") %>
+							</a>
+							
+						</td>
+					</tr>
 				
 				
-				
-				
-				
-				<tr>
-					<td>1000</td>
-					<td> 아몬드 사진 </td>
-					<td>아몬드</td>
-				</tr>
+				<% } %>
 				
 			</tbody>
 				
@@ -109,7 +121,7 @@
 		
 		
 		
-		<%--  http://localhost:8080/jsp/test08_2.jsp  --%>
+		<%--  http://localhost:8080/jsp/test08_1.jsp  --%>
 		
 		
 		
