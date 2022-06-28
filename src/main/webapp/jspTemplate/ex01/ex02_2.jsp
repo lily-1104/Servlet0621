@@ -1,15 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-       <%-- 임포트 --%>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Calendar 클래스 활용 1</title>
+<title>Insert title here</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -19,33 +14,24 @@
 	
 </head>
 <body>
-	
-	<%
-		Calendar today = Calendar.getInstance();
-		today.add(Calendar.DATE, -1);
-			
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");	// 임포트
-		
-	%>
-	
-	
+
 	<div class="container">
 	
-		<h1>오늘부터 1일</h1>
+		<jsp:include page="header.jsp" />
 		
-		<% for (int i = 1; i < 10; i++) { 
-			today.add(Calendar.DATE, 100);
-			String dateString = formatter.format(today.getTime());
-		%>
-	
-			<div class="display-4"><%= 100 * i %>일 : <span class="text-danger"><%= dateString %></span></div>
-	
-		<% } %>
-	
+		<jsp:include page="nav.jsp" />
+		
+		<section class="display-1">
+			새로운 컨텐츠!! <br>
+			와와!!
+		</section>
+		
+		<jsp:include page="footer.jsp" />
+		
 	</div>
-	
-	
-		<%--  http://localhost:8080/jsp/test09.jsp  --%>
+
+
+		<%--  http://localhost:8080/jspTemplate/ex01/ex02_2.jsp#  --%>
 	
 	
 </body>
