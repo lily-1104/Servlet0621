@@ -16,6 +16,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<link rel="stylesheet" href="style.css" type="text/css">
+	
 </head>
 <body>
 
@@ -23,87 +25,75 @@
 							   아래 주어진 데이터를 활용해서 화면에 표시하세요
 							   리스트에서 노래제목을 클릭하면 해당 노래 세부사항을 표시하는 화면으로 이동하세요
 							   검색어를 입력하면 해당하는 노래 제목이 있을 경우 해당하는 노래 세부사항 페이지로 이동하세요   --%>
-							   
-<%
-	//아티스트 정보 
+						
+	<%@ include file="data.jsp" %>
+		<%-- 정적방식을 이럴때 사용 --%>	   
+		
 	
-	 Map<String, Object> artistInfo = new HashMap<>();
-	 artistInfo.put("name", "아이유");
-	 artistInfo.put("debute", 2008);
-	 artistInfo.put("agency", "EDAM엔터테인먼트");
-	 artistInfo.put("photo", "http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/867/444/81867444_1616662460652_1_600x600.JPG");
+	<div id="wrap">
+		
+		<jsp:include page="header.jsp" />
+		
+		<jsp:include page="menu.jsp" />
+		
+		
+		<section class="contents">
+		
+			<div class="artist d-flex border border-success p-3 mt-2">	 
+								<%-- border : 테두리 만들기 / p-3 : 패딩, 안쪽으로 넣음 --%>
+			
+				<div class="image">
+					<img width="150" src="<%= artistInfo.get("photo") %>">
+				</div>
+				
+				<div class="info ml-3">	   <%-- ml-1 ~ ml-5 까지 있음 --%>
+					<h3><%= artistInfo.get("name") %></h3>
+					<div><%= artistInfo.get("agency") %></div>
+					<div><%= artistInfo.get("debute") %>데뷔</div>
+				</div>
+			</div>
+			
+			<div class="music-list mt-3">	<%-- class 안쓰더라도 구분을 위해서 만들어두는게 좋음 --%>
+				
+				<h3>곡 목록</h3>
+				
+				<table class="table table-sm text-center">
+						<%-- table-sm : 테이블 좀 더 얇게 (sm은 small) --%>
+						
+					<thead>
+						<tr>
+							<th>no</th>
+							<th>제목</th>
+							<th>앨범</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+					
+					<% for (Map<String, Object> music : musicList) { %>
+					
+						<tr>
+							<td><%= music.get("id") %></td>
+							<td><a href="/jspTemplate/test02/test02_2.jsp?id=<%= music.get("id") %>"> <%= music.get("title") %></a></td>
+							<td><%= music.get("album") %></td>
+						</tr>
+					
+					<% } %>		<%-- 닫는 괄호는 tbody 안에!! --%>
+					
+					</tbody>
+				</table>
+			</div>
+		
+		</section>
+		
+		
+		<jsp:include page="footer.jsp" />
+		
+	</div>
 	
 	
-	//아이유 노래 리스트 
-	 List<Map<String, Object>> musicList = new ArrayList<>();
-	
-	 Map<String, Object> musicInfo = new HashMap<>();
-	 musicInfo.put("id", 1);
-	 musicInfo.put("title", "팔레트");
-	 musicInfo.put("album", "Palette");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/b/b6/IU_Palette_final.jpg");
-	 musicInfo.put("time", 217);
-	 musicInfo.put("composer", "아이유");
-	 musicInfo.put("lyricist", "아이유");
-	 musicList.add(musicInfo);
-	
-	 musicInfo = new HashMap<>();
-	 musicInfo.put("id", 2);
-	 musicInfo.put("title", "좋은날");
-	 musicInfo.put("album", "Real");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/3/3c/IU_-_Real.jpg");
-	 musicInfo.put("time", 233);
-	 musicInfo.put("composer", "이민수");
-	 musicInfo.put("lyricist", "김이나");
-	 musicList.add(musicInfo);
-	
-	 musicInfo = new HashMap<>();
-	 musicInfo.put("id", 3);
-	 musicInfo.put("title", "밤편지");
-	 musicInfo.put("album", "palette");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/b/b6/IU_Palette_final.jpg");
-	 musicInfo.put("time", 253);
-	 musicInfo.put("composer", "제휘,김희원");
-	 musicInfo.put("lyricist", "아이유");
-	 musicList.add(musicInfo);
-	
-	 musicInfo = new HashMap<>();
-	 musicInfo.put("id", 4);
-	 musicInfo.put("title", "삐삐");
-	 musicInfo.put("album", "삐삐");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/111/535/81111535_1539157728291_1_600x600.JPG");
-	 musicInfo.put("time", 194);
-	 musicInfo.put("composer", "이종훈");
-	 musicInfo.put("lyricist", "아이유");
-	 musicList.add(musicInfo);
-	
-	 musicInfo = new HashMap<>();
-	 musicInfo.put("id", 5);
-	 musicInfo.put("title", "스물셋");
-	 musicInfo.put("album", "CHAT-SHIRE");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/724/877/80724877_1445520704274_1_600x600.JPG");
-	 musicInfo.put("time", 194);
-	 musicInfo.put("composer", "아이유,이종훈,이채규");
-	 musicInfo.put("lyricist", "아이유");
-	 musicList.add(musicInfo);
-	
-	 musicInfo = new HashMap<>();
-	 musicInfo.put("id", 6);
-	 musicInfo.put("title", "Blueming");
-	 musicInfo.put("album", "Love poem");
-	 musicInfo.put("singer", "아이유");
-	 musicInfo.put("thumbnail", "https://upload.wikimedia.org/wikipedia/ko/6/65/%EC%95%84%EC%9D%B4%EC%9C%A0_-_Love_poem.jpg");
-	 musicInfo.put("time", 217);
-	 musicInfo.put("composer", "아이유,이종훈,이채규");
-	 musicInfo.put("lyricist", "아이유");
-	 musicList.add(musicInfo);
-%>
-	
-
+		<%--  http://localhost:8080/jspTemplate/test02/test02.jsp#  --%>
+		
+		
 </body>
 </html>
