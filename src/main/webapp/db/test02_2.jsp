@@ -12,26 +12,29 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="style.css" type="text/css">
-	
 </head>
 <body>
-
-	<form method="post" action="/db/test02/insert">
-		
-		<h2>즐겨찾기 추가</h2>
-		
-		<div>
-			<label class="mt-2">사이트명 : </label> <input type="text" class="form-control col-3" name="name">
-		</div>
-		
-		<div>
-			<label class="mt-2">사이트 주소 : </label> <input type="text" class="form-control col-5" name="url">
-		</div>
-		
-		<button type="submit" class=" mt-3 btn btn-success">추가</button>
 	
-	</form>
+	<div class="container">
+	
+		<h2>즐겨찾기 추가</h2>
+			
+		<form method="post" action="/db/test02/insert">
+			
+			<div>
+				<label class="mt-2">사이트명 : </label> 
+				<input type="text" class="form-control col-3" name="name">
+			</div>
+			
+			<div>
+				<label class="mt-2">사이트 주소 : </label> 
+				<input type="text" class="form-control col-5" name="url">
+			</div>
+			
+			<button type="submit" class=" mt-3 btn btn-success">추가</button>
+		
+		</form>
+	</div>
 	
 	
 		<%--  http://localhost:8080/db/test02_2.jsp  --%>
